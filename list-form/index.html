@@ -1,20 +1,38 @@
 <!doctype html>
 <html ng-app="paymentHintsApp">
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-    Search: <input type="text" ng-model="searchText" />
 
-	<div ng-controller="hintsController">
+<body ng-controller="shadeController" >
+    Search: <input type="text" ng-model="searchText" ng-click="showShade()"/>
+
+	<div id="divShadow" ng-click="toggleShade()" ng-show="isFormShaded" >
+
+	<div ng-controller="hintsController" >
 		<ul ng-repeat="hint in hintsList | filter:searchText">
 			<li>{{ hint.name }}</li>
 		</ul>
 	</div>
 
+	</div>
+
 	<script src="./js/angular-1.2.16/angular.min.js"></script>
 	<script>
     	var app = angular.module('paymentHintsApp', []);
+    	
+    	app.controller('shadeController', function ($scope) {
+    	    $scope.toggleShade = function() {
+    	        $scope.isFormShaded = !$scope.isFormShaded;
+    	    };
+    	    $scope.showShade = function() {
+    	        $scope.isFormShaded = true;
+    	    };
+    	    
+    	    $scope.showShade();
+    	});
+    	
     	app.controller('hintsController', function ($scope) {
     		$scope.hintsList = 
     			[
