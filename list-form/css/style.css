@@ -4,7 +4,27 @@
 	top:40px;
     min-height:400px;
     width:100%;
-	background-color: #eeeeee;
+	background-color: #ccc;
 	filter: alpha(opacity=70);
 	opacity: 0.7;
+}
+
+
+ul.hintsList {
+    list-style-type: none;
+    width: 400px;
+	background: #ddd;
+	margin: 0px 0px 0px 50px;
+	padding: 0;
+}
+
+li.hintsList {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0;
+}
+
+li.hintsList:hover {
+	background: #eee;
 }

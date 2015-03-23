@@ -11,8 +11,8 @@
 	<div id="divShadow" ng-click="toggleShade()" ng-show="isFormShaded" >
 
 	<div ng-controller="hintsController" >
-		<ul ng-repeat="hint in hintsList | filter:searchText">
-			<li>{{ hint.name }}</li>
+		<ul class="hintsList" ng-repeat="hint in hintsList | filter:searchText">
+			<li class="hintsList">{{ hint.name }}</li>
 		</ul>
 	</div>
 
