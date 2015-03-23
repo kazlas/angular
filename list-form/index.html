@@ -9,12 +9,20 @@
     Search: <input type="text" ng-model="searchText" ng-click="showShade()"/>
 
 	<div ng-controller="hintsController" >
-		<div id="divShadow" ng-click="toggleShade()" ng-show="isFormShaded">
+	<div class="form-view">
+		<form>
+		<div class="row"><div class="row-label">Short name</div><input value="{{hintSelected.shortName}}"></div>
+		<div class="row"><div class="row-label">Name</div><input value="{{hintSelected.name}}"></div>
+		<div class="row"><div class="row-label">Amount</div><input value="{{hintSelected.amount}}"></div>
+		<div class="row"><div class="row-label"><br></div><input type="submit" value="Pay"><input type="button" value="Cancel" ></div>
+		</form>
+	</div>
+
+	<div id="divShadow" ng-click="toggleShade()" ng-show="isFormShaded">
 		<ul class="hintsList" ng-repeat="hint in hintsList | filter:searchText" ng-show="isFormShaded">
 			<li class="hintsList" ng-click="selectHint(hint)">{{hint.name}}</li>
 		</ul>
-		</div>
-		{{hintSelected}}		
+	</div>
 	</div>
 
 

@@ -28,3 +28,22 @@ li.hintsList {
 li.hintsList:hover {
 	background: #eee;
 }
+
+.form-view {
+	position: absolute;
+	left:0px;
+	top:80px;
+    height:400px;
+	width: 700px;
+}
+
+.row {
+	clear: both;
+	padding: 10px 15px 0px;
+	line-height: 20px;
+}
+
+.row-label  {
+	width: 200px;
+	float: left;
+}
