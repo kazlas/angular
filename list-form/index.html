@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="paymentHintsApp">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div ng-controller="hintsController">
+		<ul ng-repeat="hint in hintsList | filter:searchText">
+			<li>{{ hint.name }}</li>
+		</ul>
+	</div>
+
+	<script src="./js/angular-1.2.16/angular.min.js"></script>
+	<script>
+    	var app = angular.module('paymentHintsApp', []);
+    	app.controller('hintsController', function ($scope) {
+    		$scope.hintsList = 
+    			[
+					{name: "John Wiliam Doe", shortName: "John Doe"},
+					{name: "Anna Nowak", shortName: "Ania"}
+				]
+    	});
+	</script>
+
+</body>
+</html>
