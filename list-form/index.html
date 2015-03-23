@@ -5,18 +5,17 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body ng-controller="shadeController" >
+<body ng-controller="shadeController">
     Search: <input type="text" ng-model="searchText" ng-click="showShade()"/>
 
-	<div id="divShadow" ng-click="toggleShade()" ng-show="isFormShaded" >
-
 	<div ng-controller="hintsController" >
-		<ul class="hintsList" ng-repeat="hint in hintsList | filter:searchText">
-			<li class="hintsList">{{ hint.name }}</li>
+		{{hintSelected}}
+		<ul class="hintsList" ng-repeat="hint in hintsList | filter:searchText" ng-click="toggleShade()" ng-show="isFormShaded">
+			<li class="hintsList" ng-click="selectHint(hint)">{{hint.name}}</li>
 		</ul>
 	</div>
 
-	</div>
+	<div id="divShadow" ng-click="toggleShade()"  ng-show="isFormShaded"></div>
 
 	<script src="./js/angular-1.2.16/angular.min.js"></script>
 	<script>
@@ -34,11 +33,16 @@
     	});
     	
     	app.controller('hintsController', function ($scope) {
+    	    $scope.hintSelected = "";
+    	    $scope.selectHint = function(hintSelected) {
+    	    	$scope.hintSelected = hintSelected;
+    	    }
+    	    
     		$scope.hintsList = 
     			[
 					{name: "John Wiliam Doe", shortName: "John Doe"},
 					{name: "Anna Nowak", shortName: "Ania"}
-				]
+				];
     	});
 	</script>
 
