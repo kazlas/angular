@@ -1,2 +1,2 @@
 # angular
-Usage of angular-js in practise
+Usage of angular-js in practice
